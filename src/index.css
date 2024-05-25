@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header {
+  height: 65px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+}
+.meme-logo {
+  width: 31.31px;
+  height: 26.22px;
+  margin-left: 29px;
+}
+.heading {
+  font-family: Karla;
+  font-size: 1.296875rem;
+  font-weight: 700;
+  line-height: 24.25px;
+  letter-spacing: -0.1em;
+  text-align: left;
+  color: #ffffff;
+  margin: 0px auto 0px 7px;
+}
+.header-text {
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 14.52px;
+  text-align: right;
+  color: #ffffff;
+  padding-right: 28px;
+}
+main {
+  margin: 36px;
+}
+.form {
+  display: grid;
+  grid-template: 40px 40px /1fr 1fr; /*create two row with 40px height and devide 1 fr halg half*/
+  gap: 33px;
+}
+.form-input {
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  border: 0.82px solid #d1d5db;
+  text-indent: 5px; /*to give empty sapce to element in left of the content*/
+  height: 35px;
+  width: 100%;
+}
+.form-button {
+  font-family: "Karla", sans-serif;
+  grid-column: 1/-1; /*will allow to start from column to last column*/
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.meme-image{
+  max-width: 100%;
+  /* 
+  margin:auto;
+  above property will not work bcz image is inline element, 1st we need to convert image into block element 
+  */
+  display: block;
+  margin: auto;
+}
