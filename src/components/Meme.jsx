@@ -1,3 +1,5 @@
+import download from 'downloadjs';
+import { toPng } from 'html-to-image';
 import React from 'react'
 import { useState } from "react";
 export default function Meme() {
@@ -41,7 +43,16 @@ export default function Meme() {
         .then(data=>setAllMemes(data.data.memes))
     }, []
     )
-
+    const memeEl = document.getElementById("meme");
+    function downloadMeme () {
+        toPng(memeEl)
+        .then(dataUrl=>{
+            download(dataUrl, `${meme.topText}-custom-meme.png`)
+        })
+        .catch((error)=>{
+            alert(error);
+        })
+    }
     return (
         <main className="=meme">
             {/* <p>{randomMemeUrl}</p> */} {/*local variable does not change ui or will not work directly in react, we have requred state to work */}
@@ -76,10 +87,13 @@ export default function Meme() {
                 </div>
                 <button onClick={getRandomImage} className="form-button">Get a new meme image  🖼</button>
             </div>
-            <div className="meme">
+            <div className="meme" id='meme'>
                 <img src={meme.randomImage} className="meme-image" alt="random-meme-image" />
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
+            <div className="download-meme">
+                <button className='download-btn' onClick={downloadMeme}>Download Your Meme Image</button>
             </div>
         </main>
     )
