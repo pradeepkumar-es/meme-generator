@@ -4,6 +4,11 @@
 body {
   margin: 0;
 }
+.app{
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+}
 .header {
   height: 65px;
   width: auto;
@@ -115,4 +120,17 @@ main {
 }
 .download-btn:active{
   transform: scale(.98);
+}
+.footer{
+  margin-top: auto;
+  text-align: center;
+  background-color: #480534;
+  padding: .7rem 0;
+}
+.footer p{
+  font-weight: bold;
+  color: white;
+}
+.footer a{
+  color: #bc97d2;
 }

@@ -12,7 +12,7 @@ export default function Meme() {
     // console.log(meme) //will give random current url when button is clicked
     //now setting the memeurl in above getRandomImage function 
     const [allMemes, setAllMemes] = useState([])
-
+    const [newImageUrl, setNewImageUrl] = useState([]);
     function getRandomImage () {
          // console.log(memesData.data.memes) //array of memes
     let randomMemeNumber=Math.floor(Math.random()*allMemes.length) 
@@ -48,11 +48,13 @@ export default function Meme() {
         toPng(memeEl)
         .then(dataUrl=>{
             download(dataUrl, `${meme.topText}-custom-meme.png`)
+            setNewImageUrl(dataUrl)
         })
         .catch((error)=>{
             alert(error);
         })
     }
+    console.log(newImageUrl);
     return (
         <main className="=meme">
             {/* <p>{randomMemeUrl}</p> */} {/*local variable does not change ui or will not work directly in react, we have requred state to work */}
