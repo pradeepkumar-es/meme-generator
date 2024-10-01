@@ -4,7 +4,7 @@ export default function Header () {
         <div className="header">
             <img src={memeLogo} alt="" className="meme-logo" />
             <h1 className="heading">Meme Generator</h1>
-            <p className="header-text">React - Project</p>
+            {/* <p className="header-text">React - Project</p> */}
         </div>
     )
 }
